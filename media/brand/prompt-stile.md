@@ -1,74 +1,52 @@
 # VITAFORTE – Prompt di stile per generatori di immagini
 
-Stile di riferimento: le clip `sigla_incisione_master.mp4` e `sigla_zoom.mp4`
-(incisione antica a inchiostro seppia su pergamena, luce calda al centro).
+Versione del 27/11/2026 (approvata da Filippo). Sostituisce la versione seppia.
 
-Regole:
-- I prompt sono in inglese: quasi tutti i generatori rendono meglio così.
-- Nessuna scritta dentro l'immagine: titoli e "VITAFORTE" si aggiungono solo al montaggio.
-- Niente volti realistici di persone vere di oggi: figure di spalle, in ombra o lontane.
-- Formato verticale 9:16.
+## Le 4 regole dello stile
+1. **Porta e sigla**: incisione molto dettagliata (tipo Gustave Doré).
+2. **Immagini dei contenuti**: incisione SEMPLIFICATA: linee nere marcate, poco tratteggio, contrasto forte, un solo soggetto chiaro, zone vuote per il testo.
+3. **Colore**: inchiostro NERO su carta antica chiara (avorio leggero). Niente seppia, niente marrone, niente colori.
+4. **Luce**: UNA sola fonte di luce visibile (candela, porta aperta, finestra, lanterna, raggio dall'alto); il resto in penombra.
 
----
+Altre regole: nessuna scritta nell'immagine; niente volti realistici di persone vere di oggi (figure di spalle, in ombra o lontane); formato verticale 9:16; a tutta pagina, senza cornice.
 
-## 1. Blocco STILE (da incollare in fondo a ogni prompt)
-
-```
-antique copperplate engraving, fine cross-hatching and stippling, sepia brown ink on aged cream parchment, almost monochrome warm palette, one single warm golden light source, deep chiaroscuro, highly detailed, 17th-century etching, perfectly centered symmetrical composition, vertical 9:16, no text, no letters, no watermark, no signature, no modern elements
-```
-
-## 2. Negative prompt (solo dove c'è il campo apposito)
-
-```
-color photograph, 3D render, CGI, cartoon, anime, flat vector, neon, saturated colors, modern objects, text, letters, logo, watermark, signature, frame border, blurry, asymmetry, distorted architecture, realistic modern faces
-```
+Generatore: Gemini via Composio, modello `gemini-2.5-flash-image`, `aspect_ratio` 9:16 (circa 4 centesimi a immagine). Le immagini si salvano su Drive in Progetti Claude/VF_Social/01_Immagini.
 
 ---
 
-## 3. Porta – il gancio di entrata e uscita (SENZA pendolo)
+## 1. Blocco STILE – CONTENUTI (in fondo a ogni prompt di contenuto)
 
-**3a. Porta chiusa (inizio dell'intro / fine dell'outro)**
 ```
-A monumental gothic cathedral portal seen from the front, heavy wooden double doors closed, iron studs and ornate hinges, pointed arch with stone tracery and pinnacles, ribbed vault above, wide stone steps in the foreground, a thin line of warm light glowing through the gap between the doors, [STILE]
-```
-
-**3b. Porta socchiusa**
-```
-A monumental gothic cathedral portal seen from the front, heavy wooden double doors half open, a blade of warm golden light pouring out onto the stone steps, pointed arch with stone tracery and pinnacles, ribbed vault above, [STILE]
+simplified antique engraving, bold clean black ink lines, minimal sparse hatching, strong contrast, large flat areas of black and of light paper, black ink on slightly aged off-white paper, black and white, neutral grayscale, no sepia, no brown, no color, one single visible light source, the rest in deep shadow, faces not visible, vertical 9:16, full bleed edge to edge, no border, no frame, no rounded corners, no text, no letters, no watermark, no signature
 ```
 
-**3c. Porta spalancata sulla luce (fine dell'intro / inizio dell'outro)**
+Modello di prompt:
 ```
-Close view through wide open gothic wooden doors, the doorway filled with radiant warm light drawn as fine engraved rays, the dark doors framing the light on both sides, stone threshold at the bottom, [STILE]
+[SOGGETTO], simple composition with one clear subject, large calm empty area for text in the [upper/lower] half, [STILE CONTENUTI]
 ```
-
-## 4. Pendolo – il simbolo che ritorna
-
-**4a. Emblema (da usare piccolo nelle grafiche)**
+Esempio approvato (VF_studioso_semplificato_prova1.png):
 ```
-A single brass pendulum hanging from a thin chain, perfectly still and vertical, centered, a soft halo of warm light behind it, plain aged parchment background, emblem, [STILE]
+An old scholar seen from behind, sitting at a wooden desk, reading a large open ancient book by the light of a single candle, simple composition with one clear subject in the lower half, large calm empty dark wall in the upper half, [STILE CONTENUTI]
 ```
 
-**4b. Pendolo nella luce (chiusura alternativa)**
+## 2. Blocco STILE – PORTA E SIGLA (dettagliato)
+
 ```
-A brass pendulum hanging perfectly still in the center of a radiant gothic doorway full of warm light, engraved light rays, dark stone arch framing the scene, [STILE]
+antique copperplate engraving in the style of Gustave Doré, fine black ink cross-hatching and stippling on slightly aged off-white paper, black and white, neutral grayscale, no sepia, no brown, no color tint, only a very faint antique paper tone, deep chiaroscuro with one single light source, highly detailed, perfectly centered and symmetrical, vertical 9:16, full bleed edge to edge, no border, no frame, no rounded corners, no text, no letters, no watermark, no signature, no modern elements
 ```
 
-## 5. Scena per i contenuti (modello)
+Porta socchiusa approvata (VF_porta_socchiusa_prova2_bn.png):
+```
+A monumental gothic cathedral portal seen from the front, heavy wooden double doors half open, a blade of bright light pouring out onto the stone steps, pointed arch with stone tracery and pinnacles, dark ribbed vault above, [STILE PORTA]
+```
+Varianti: porta chiusa con una linea di luce tra i battenti; porta spalancata sulla luce.
 
-Sostituisci [SOGGETTO] con la scena del reel.
+## 3. Pendolo – simbolo che ritorna
 ```
-[SOGGETTO], figures seen from behind or in deep shadow, faces not visible, [STILE]
-```
-Esempio:
-```
-An old scholar seen from behind reading a large open book by candlelight in a stone library, figures seen from behind or in deep shadow, faces not visible, [STILE]
+A single brass pendulum hanging from a thin chain, perfectly still and vertical, centered, a soft halo of light behind it, plain empty paper background, emblem, [STILE CONTENUTI]
 ```
 
----
-
-## Come provarli
-- Gemini, Bing Image Creator, Firefly: incolla il prompt intero, con lo STILE al posto di [STILE]. Il negative prompt non serve.
-- Ideogram, Leonardo: incolla il prompt e metti il negative nel suo campo.
-- Midjourney: aggiungi in fondo `--ar 9:16 --style raw --no text, letters, color, 3d`.
-- Per confrontare i generatori usa sempre lo **stesso prompt** (consigliato: 3b) e valuta: somiglianza con le sigle, simmetria, assenza di scritte, qualità delle linee incise.
+## 4. Negative prompt (solo dove c'è il campo apposito)
+```
+sepia, brown, color, color photograph, 3D render, CGI, cartoon, anime, flat vector, neon, modern objects, text, letters, logo, watermark, signature, frame, border, rounded corners, blurry, multiple light sources, realistic modern faces
+```
