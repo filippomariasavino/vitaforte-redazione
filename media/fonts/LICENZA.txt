@@ -1,0 +1,2 @@
+Lora e Inter: font gratuiti con licenza SIL Open Font License 1.1 (uso libero, anche commerciale).
+Fonte: pacchetti @fontsource/lora e @fontsource/inter.
